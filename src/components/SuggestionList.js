@@ -7,7 +7,6 @@ const SuggestionList = ({
   setFocusedIndex,
 }) => {
   const suggestionListRef = useRef(null);
-
   return (
     <ul className="suggestion-list" ref={suggestionListRef}>
       <small>추천 검색어</small>
