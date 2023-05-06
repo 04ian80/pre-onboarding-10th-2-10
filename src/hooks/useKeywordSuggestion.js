@@ -1,19 +1,28 @@
-import { useState, useEffect } from 'react';
-import { fetchSuggestions, renderCachedItem } from '../utils/helpSuggestions';
+import { useCallback, useEffect, useState } from 'react';
+import { apiClient } from '../apis/apiClient';
+import { debounce } from '../utils/debounce';
 
 const useKeywordSuggestion = (keyword) => {
   const [suggestions, setSuggestions] = useState([]);
 
-  useEffect(() => {
-    if (localStorage.getItem(keyword)) {
-      renderCachedItem(keyword, setSuggestions);
-      return;
-    }
+  const fetchSuggestions = useCallback(
+    debounce(async (name) => {
+      try {
+        if (name) {
+          const response = await apiClient.getKeyword(name);
+          setSuggestions(response.data);
+        } else {
+          setSuggestions([]);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }, 500),
+    []
+  );
 
-    const timer = setTimeout(() => {
-      fetchSuggestions(keyword, setSuggestions);
-    }, 200);
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    fetchSuggestions(keyword);
   }, [keyword]);
 
   return [suggestions];

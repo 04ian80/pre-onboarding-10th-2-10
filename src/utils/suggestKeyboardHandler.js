@@ -1,4 +1,4 @@
-const useKeyboard = (
+const suggestKeyboardHandler = (
   suggestions,
   focusedIndex,
   setFocusedIndex,
@@ -31,4 +31,4 @@ const useKeyboard = (
   return handleKeyDown;
 };
 
-export default useKeyboard;
+export default suggestKeyboardHandler;
