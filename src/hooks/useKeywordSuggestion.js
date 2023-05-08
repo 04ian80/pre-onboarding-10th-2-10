@@ -17,13 +17,13 @@ const useKeywordSuggestion = (keyword) => {
       } catch (error) {
         console.error(error);
       }
-    }, 500),
-    []
+    }, 200),
+    [setSuggestions]
   );
 
   useEffect(() => {
     fetchSuggestions(keyword);
-  }, [keyword]);
+  }, [keyword, fetchSuggestions]);
 
   return [suggestions];
 };
