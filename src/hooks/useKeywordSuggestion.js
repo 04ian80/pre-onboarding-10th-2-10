@@ -18,12 +18,12 @@ const useKeywordSuggestion = (keyword) => {
         console.error(error);
       }
     }, 200),
-    [setSuggestions]
+    []
   );
 
   useEffect(() => {
     fetchSuggestions(keyword);
-  }, [keyword, fetchSuggestions]);
+  }, [keyword]);
 
   return [suggestions];
 };
