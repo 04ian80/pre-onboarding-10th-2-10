@@ -93,5 +93,5 @@ class ApiClient {
 }
 
 export const apiClient = new ApiClient({
-  HOST: 'https://api.clinicaltrialskorea.com/api/v1/search-conditions/',
+  HOST: '/api/v1/search-conditions/',
 });
