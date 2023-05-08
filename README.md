@@ -2,6 +2,12 @@
 
 추천 검색어를 제공하는 검색창을 구현하는 과제입니다.
 
+## 배포링크
+https://merry-tarsier-9f7f85.netlify.app/
+<br/>
+Netlify로 배포하였습니다.
+proxy 설정을 위해 Chrome에 [Allow CORS: Access-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=ko) 확장자를 설치하여 사용해주세요.
+
 ## 프로젝트 시작 방법
 
 ### Repository Clone
