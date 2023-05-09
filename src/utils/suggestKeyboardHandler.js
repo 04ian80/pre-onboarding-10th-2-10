@@ -13,6 +13,8 @@ const suggestKeyboardHandler = (
       setFocusedIndex((prevIndex) =>
         prevIndex < suggestions.length - 1 ? prevIndex + 1 : 0
       );
+
+      return;
     }
 
     if (e.key === 'ArrowUp') {
@@ -21,6 +23,8 @@ const suggestKeyboardHandler = (
       setFocusedIndex((prevIndex) =>
         prevIndex > 0 ? prevIndex - 1 : prevIndex
       );
+
+      return;
     }
 
     if (e.key === 'Enter' && focusedIndex !== undefined && focusedIndex >= 0) {
@@ -28,6 +32,8 @@ const suggestKeyboardHandler = (
 
       setKeyword(suggestions[focusedIndex].name);
     }
+
+    return;
   };
 
   return handleKeyDown;

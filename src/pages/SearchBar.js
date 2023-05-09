@@ -23,13 +23,20 @@ const SearchBar = () => {
         handleKeyDown={handleKeyDown}
       />
       <div className="suggestion-list__container">
-        {keyword && (
+        {suggestions.length > 0 ? (
           <SuggestionList
             keyword={keyword}
             suggestions={suggestions}
             focusedIndex={focusedIndex}
             setFocusedIndex={setFocusedIndex}
           />
+        ) : (
+          keyword && (
+            <div className="suggestion-list">
+              <small>추천 검색어</small>
+              <div className="suggestion_no-result">검색어 없음</div>
+            </div>
+          )
         )}
       </div>
     </>
