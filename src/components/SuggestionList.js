@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import SuggestionItem from './SuggestionItem';
 
+const MAX_SUGGESTIONS = 7;
+
 const SuggestionList = ({ suggestions, focusedIndex, setFocusedIndex }) => {
   const suggestionListRef = useRef(null);
-  const MAX_SUGGESTIONS = 7;
   const startIndex = Math.max(0, focusedIndex - MAX_SUGGESTIONS + 1);
 
   const renderedSuggestions = suggestions.slice(
